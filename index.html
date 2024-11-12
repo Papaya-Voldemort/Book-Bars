@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Progress Tracker</title>
+    <title>Group Task Progress Tracker</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        .task { margin: 10px 0; }
+        h1 { text-align: center; }
+        .task { margin: 20px 0; }
         .progress-container { width: 100%; background: #f3f3f3; border-radius: 5px; }
-        .progress-bar { height: 20px; background: #4caf50; width: 0%; text-align: center; color: white; border-radius: 5px; }
-        a { margin-right: 10px; }
+        .progress-bar { height: 25px; background: #4caf50; width: 0%; text-align: center; color: white; border-radius: 5px; }
+        a { margin: 10px; text-decoration: none; color: #007bff; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1>Task Progress Tracker</h1>
-    <div class="task" id="eli-tasks">
-        <h2>Eli's Tasks</h2>
-        <p><a href="eli.html">View Eli's Page</a></p>
+    <h1>Group Task Progress Tracker</h1>
+
+    <div>
+        <a href="eli.html">Eli's Page</a>
+        <a href="allyson.html">Allyson's Page</a>
+        <a href="abigail.html">Abigail's Page</a>
     </div>
-    <div class="task" id="allyson-tasks">
-        <h2>Allyson's Tasks</h2>
-        <p><a href="allyson.html">View Allyson's Page</a></p>
-    </div>
-    <div class="task" id="abigail-tasks">
-        <h2>Abigail's Tasks</h2>
-        <p><a href="abigail.html">View Abigail's Page</a></p>
+
+    <div class="task" id="group-tasks">
+        <h2>Group Tasks</h2>
     </div>
 
     <script>
-        // Example to add a task progress bar
-        function createProgressBar(containerId, taskName, percentage) {
-            const container = document.getElementById(containerId);
+        // Function to create a progress bar
+        function createProgressBar(taskName, percentage) {
+            const container = document.getElementById('group-tasks');
             const taskDiv = document.createElement('div');
             taskDiv.className = 'task';
             taskDiv.innerHTML = `
@@ -42,10 +42,10 @@
             container.appendChild(taskDiv);
         }
 
-        // Add demo tasks
-        createProgressBar('eli-tasks', "Complete Chapter 1", 70);
-        createProgressBar('allyson-tasks', "Finish Research", 50);
-        createProgressBar('abigail-tasks', "Draft Proposal", 30);
+        // Add demo group tasks
+        createProgressBar("Complete Group Project", 60);
+        createProgressBar("Prepare for Presentation", 40);
+        createProgressBar("Compile Research Findings", 30);
     </script>
 </body>
 </html>
