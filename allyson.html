@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allyson's Tasks</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .task { margin: 10px 0; }
+        .progress-container { width: 100%; background: #f3f3f3; border-radius: 5px; }
+        .progress-bar { height: 20px; background: #4caf50; width: 0%; text-align: center; color: white; border-radius: 5px; }
+        a { margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Allyson's Tasks</h1>
+    <p><a href="index.html">Back to Main Page</a></p>
+    <div id="allyson-tasks"></div>
+
+    <script>
+        // Example to add a task progress bar for Allyson
+        function createProgressBar(taskName, percentage) {
+            const container = document.getElementById('allyson-tasks');
+            const taskDiv = document.createElement('div');
+            taskDiv.className = 'task';
+            taskDiv.innerHTML = `
+                <strong>${taskName}</strong>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${percentage}%;">${percentage}%</div>
+                </div>
+            `;
+            container.appendChild(taskDiv);
+        }
+
+        // Add demo tasks for Allyson
+        createProgressBar("Finish Research", 50);
+        createProgressBar("Prepare Presentation", 20);
+    </script>
+</body>
+</html>
