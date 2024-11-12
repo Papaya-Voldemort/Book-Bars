@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abigail's Tasks</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .task { margin: 10px 0; }
+        .progress-container { width: 100%; background: #f3f3f3; border-radius: 5px; }
+        .progress-bar { height: 20px; background: #4caf50; width: 0%; text-align: center; color: white; border-radius: 5px; }
+        a { margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Abigail's Tasks</h1>
+    <p><a href="index.html">Back to Main Page</a></p>
+    <div id="abigail-tasks"></div>
+
+    <script>
+        // Example to add a task progress bar for Abigail
+        function createProgressBar(taskName, percentage) {
+            const container = document.getElementById('abigail-tasks');
+            const taskDiv = document.createElement('div');
+            taskDiv.className = 'task';
+            taskDiv.innerHTML = `
+                <strong>${taskName}</strong>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${percentage}%;">${percentage}%</div>
+                </div>
+            `;
+            container.appendChild(taskDiv);
+        }
+
+        // Add demo tasks for Abigail
+        createProgressBar("Draft Proposal", 30);
+        createProgressBar("Review Feedback", 60);
+    </script>
+</body>
+</html>
